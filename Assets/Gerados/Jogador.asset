@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2457b107752b7245aa4d8f926a93ac2, type: 3}
   m_Name: Jogador
   m_EditorClassIdentifier: 
+  ouvintes:
+  - {fileID: 0}
   vida: 3
   vidaMaxima: 3
-  velocidade: 5
+  velocidade: 15
+  invencivel: 0

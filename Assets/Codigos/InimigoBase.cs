@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class InimigoBase : MonoBehaviour
 {
     public int comportamentoAtual = 0;
     public Comportamento[] comportamentos;
+    public Text feedback;
     private void Awake()
     {
+        feedback.enabled = false;
         for (int i = 0; i < comportamentos.Length; i++)
         {
             comportamentos[i]._objeto = this.gameObject.GetComponent<InimigoBase>();
@@ -16,15 +18,48 @@ public class InimigoBase : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(trocarDesafio());
+        //StartCoroutine(trocarDesafio());
     }
 
     public void Update()
     {
-        comportamentos[comportamentoAtual].Mover();
+        if(!feedback.isActiveAndEnabled)
+        {
+            comportamentos[comportamentoAtual].Mover();
+
+            if (comportamentos[comportamentoAtual].Atingiu())
+            {
+                StartCoroutine(Trocar());
+            }
+        }        
     }
 
-    IEnumerator trocarDesafio()
+    IEnumerator Trocar()
+    {
+        Time.timeScale = 0;
+        feedback.enabled = true;
+        yield return new WaitForSecondsRealtime(1f);
+        TrocarDesafio();
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1;
+        feedback.enabled = false;
+    }
+    public void TrocarDesafio()
+    {
+        int aux = Random.Range(0, comportamentos.Length);
+        //if (comportamentoAtual != aux)
+        {
+            comportamentos[comportamentoAtual].AcabarEstado();
+            comportamentoAtual = aux;
+            Jogador.jogador.TrocarEstado(comportamentoAtual);
+
+            comportamentos[comportamentoAtual].ConfiguracoesEstado();
+            comportamentos[comportamentoAtual].Mover();
+            comportamentos[comportamentoAtual].Atacar();
+        }
+    }
+    /*
+    IEnumerator TD()
     {
         while (true)
         {
@@ -45,4 +80,5 @@ public class InimigoBase : MonoBehaviour
         }
 
     }
+    */
 }

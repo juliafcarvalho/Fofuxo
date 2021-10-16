@@ -14,4 +14,8 @@ public abstract class Comportamento : ScriptableObject
 	public virtual void ConfiguracoesEstado() { }
 	public virtual void AcabarEstado() { }
 	public virtual void Limpar() { }
+	public virtual bool Atingiu()
+    {
+		return false;
+    }
 }

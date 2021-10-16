@@ -9,7 +9,7 @@ public class ValoresJogador : ScriptableObject
     public List<Ouvinte> ouvintes = new List<Ouvinte>();
     public int vida = 3;
     public int vidaMaxima = 3;
-    public float velocidade = 5f;
+    public float velocidade = 15f;
     public bool invencivel = false;
     private void Awake()
     {

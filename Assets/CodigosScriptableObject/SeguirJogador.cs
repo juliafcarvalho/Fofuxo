@@ -6,7 +6,10 @@ using UnityEngine;
 public class SeguirJogador : Comportamento
 {
     public Vector2 positionToMoveTo;
+    public float tempoSeguir = 10;
     Coroutine mov;
+    public float tempo = 0;
+
     public override void Mover()
     {
         if(mov == null)
@@ -37,13 +40,27 @@ public class SeguirJogador : Comportamento
     {
         if(mov != null)
         {
-            _objeto.StopCoroutine(mov);
-            Limpar();
-        }        
+            _objeto.StopCoroutine(mov);            
+        }
+        Limpar();
     }
 
     public override void Limpar()
     {
         mov = null;
+        tempo = 0;
+    }
+
+    public override bool Atingiu()
+    {
+        tempo += Time.deltaTime;
+        if(tempo > tempoSeguir)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

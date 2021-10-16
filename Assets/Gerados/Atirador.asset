@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objeto: {fileID: 0}
   projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
+  coletavel: {fileID: 138856289641009367, guid: c40bcc3cdf00d4648a82a6243ac7fd77, type: 3}
   tempoAtirar: 1
+  coletasNecessarias: 3
