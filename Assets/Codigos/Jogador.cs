@@ -29,30 +29,33 @@ public class Jogador : MonoBehaviour
     {
         
     }
-    public void TrocarEstado()
+    public void TrocarEstado(int novoEstado)
     {
-        movimentacaoJogador++;
-        rb2D.velocity = Vector2.zero;
-        if (movimentacaoJogador == 4)
+        if(novoEstado != movimentacaoJogador)
         {
-            movimentacaoJogador = 0;
-        }
+            movimentacaoJogador = novoEstado;
+            rb2D.velocity = Vector2.zero;
+            if (movimentacaoJogador == 4)
+            {
+                movimentacaoJogador = 0;
+            }
 
-        switch (movimentacaoJogador)
-        {
-            case 0:
-                this.transform.position = new Vector3(0, 0, 0);
-                break;
-            case 1:
-                this.transform.position = new Vector3(0, -4.5f, 0);
-                break;
-            case 2:
-                this.transform.position = new Vector3(-4.5f, 0, 0);
-                break;
-            case 3:
-                this.transform.position = new Vector3(0, -4.2f, 0);
-                break;
-        }
+            switch (movimentacaoJogador)
+            {
+                case 0:
+                    this.transform.position = new Vector3(0, 0, 0);
+                    break;
+                case 1:
+                    this.transform.position = new Vector3(0, -4.5f, 0);
+                    break;
+                case 2:
+                    this.transform.position = new Vector3(-4.5f, 0, 0);
+                    break;
+                case 3:
+                    this.transform.position = new Vector3(0, -4.2f, 0);
+                    break;
+            }
+        }        
     }
 
     private void FixedUpdate()
@@ -169,6 +172,7 @@ public class Jogador : MonoBehaviour
         if(collision.tag == "Dano")
         {
             valores.DiminuirVida(1);
+            Destroy(collision.gameObject);
         }
     }
 }

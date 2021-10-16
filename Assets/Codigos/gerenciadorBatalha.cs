@@ -16,13 +16,5 @@ public class gerenciadorBatalha : MonoBehaviour
 
     }
 
-    IEnumerator trocarDesafio()
-    {
-        while(true)
-        {
-            Jogador.jogador.TrocarEstado();
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
-        }        
-
-    }
+    
 }

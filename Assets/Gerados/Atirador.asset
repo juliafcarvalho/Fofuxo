@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Atirador
   m_EditorClassIdentifier: 
   _objeto: {fileID: 0}
+  projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
+  tempoAtirar: 1

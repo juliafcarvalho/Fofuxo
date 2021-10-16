@@ -5,15 +5,53 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Atirador", menuName = "Inimigo/Atirador", order = 2)]
 public class Atirador : Comportamento
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Coroutine atacar;
+    public GameObject projetil;
+    public float tempoAtirar = 1;
+     
+    public override void Atacar()
+{
+        if (atacar == null)
+            atacar = _objeto.GetComponent<InimigoBase>().StartCoroutine(_Atacar());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator _Atacar()
     {
-        
+        while (true)
+        {
+            GameObject aux = Instantiate(projetil, _objeto.transform.position, Quaternion.identity);
+
+            Vector3 targ = Jogador.jogador.transform.position;
+            targ.z = 0f;
+            Vector3 objectPos = aux.transform.position;
+            targ.x = targ.x - objectPos.x;
+            targ.y = targ.y - objectPos.y;
+            float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+            aux.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+            aux.GetComponent<Rigidbody2D>().velocity = aux.transform.right * 5f;
+            Destroy(aux.gameObject, 2f);
+            yield return new WaitForSeconds(Random.Range(1f, 3f));
+        }
+        atacar = null;
+    }
+
+    public override void ConfiguracoesEstado()
+    {
+        _objeto.transform.position = new Vector3(0, 0, 0);
+    }
+
+    public override void AcabarEstado()
+    {
+        if(atacar != null)
+        {
+            _objeto.StopCoroutine(atacar);
+            Limpar();
+        }        
+    }
+
+    public override void Limpar()
+    {
+        atacar = null;
     }
 }
