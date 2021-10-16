@@ -44,12 +44,10 @@ public class MovSimples : MonoBehaviour
         {
             estouNoCaminho = true;
         }
-        print(collision.tag);
         if(collision.tag == "Int")
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                print("teste");
                 carregamento.IrParaScene(int.Parse(collision.name));
             }
         }
