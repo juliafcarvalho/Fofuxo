@@ -4,45 +4,54 @@ using UnityEngine;
 
 public class Jogador : MonoBehaviour
 {
+    public ValoresJogador valores;
+
+    public static Jogador jogador;
+
+    public Rigidbody2D rb2D;
     public int movimentacaoJogador = 0;
-
-    Rigidbody2D rb2D;
-    float velocidade = 5f;
-
-    private float movHorizontal, movVertical;
-
+    public float movHorizontal, movVertical;
     public bool tocandoDireita, tocandoEsquerda, tocandoCima, tocandoBaixo;
-    void Start()
+
+    private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        jogador = this;
+        valores.LimparOuvintes();
     }
+    void Start()
+    {
+        
+    }
+
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        
+    }
+    public void TrocarEstado()
+    {
+        movimentacaoJogador++;
+        rb2D.velocity = Vector2.zero;
+        if (movimentacaoJogador == 4)
         {
-            movimentacaoJogador++;
-            rb2D.velocity = Vector2.zero;
-            if(movimentacaoJogador == 4)
-            {
-                movimentacaoJogador = 0;
-            }
+            movimentacaoJogador = 0;
+        }
 
-            switch (movimentacaoJogador)
-            {
-                case 0:
-                    this.transform.position = new Vector3(0, 0, 0);
-                    break;
-                case 1:
-                    this.transform.position = new Vector3(0, -4.5f, 0);
-                    break;
-                case 2:
-                    this.transform.position = new Vector3(-4.5f, 0, 0);
-                    break;
-                case 3:
-                    this.transform.position = new Vector3(0, -4.2f, 0);
-                    break;
-            }
+        switch (movimentacaoJogador)
+        {
+            case 0:
+                this.transform.position = new Vector3(0, 0, 0);
+                break;
+            case 1:
+                this.transform.position = new Vector3(0, -4.5f, 0);
+                break;
+            case 2:
+                this.transform.position = new Vector3(-4.5f, 0, 0);
+                break;
+            case 3:
+                this.transform.position = new Vector3(0, -4.2f, 0);
+                break;
         }
     }
 
@@ -69,16 +78,16 @@ public class Jogador : MonoBehaviour
     }
     public void MovVertical()
     {
-        rb2D.velocity = new Vector2(rb2D.velocity.x, movVertical * velocidade);
+        rb2D.velocity = new Vector2(rb2D.velocity.x, movVertical * valores.velocidade);
     }
     public void MovHorizontal()
     {
-        rb2D.velocity = new Vector2(movHorizontal * velocidade, rb2D.velocity.y);
+        rb2D.velocity = new Vector2(movHorizontal * valores.velocidade, rb2D.velocity.y);
     }
     public void MovBasica()
     {
         Vector2 normalizacao = new Vector2(movHorizontal, movVertical).normalized;
-        rb2D.velocity = normalizacao * velocidade;
+        rb2D.velocity = normalizacao * valores.velocidade;
     }
 
     public void MovBorda()
@@ -116,7 +125,7 @@ public class Jogador : MonoBehaviour
             //rb2D.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
         Vector2 aux = new Vector2(movHorizontal, movVertical);
-        rb2D.velocity = aux * velocidade;
+        rb2D.velocity = aux * valores.velocidade;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -137,7 +146,6 @@ public class Jogador : MonoBehaviour
                 break;
         }        
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         switch (collision.collider.name)
@@ -154,6 +162,13 @@ public class Jogador : MonoBehaviour
             case "tocandoBaixo":
                 tocandoBaixo = false;
                 break;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Dano")
+        {
+            valores.DiminuirVida(1);
         }
     }
 }
