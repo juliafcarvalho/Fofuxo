@@ -15,10 +15,12 @@ public class InimigoBase : MonoBehaviour
             comportamentos[i]._objeto = this.gameObject.GetComponent<InimigoBase>();
             comportamentos[i].Limpar();
         }
+
+        
     }
     void Start()
     {
-        //StartCoroutine(trocarDesafio());
+        TrocarDesafio();
     }
 
     public void Update()
@@ -51,34 +53,20 @@ public class InimigoBase : MonoBehaviour
         {
             comportamentos[comportamentoAtual].AcabarEstado();
             comportamentoAtual = aux;
-            Jogador.jogador.TrocarEstado(comportamentoAtual);
+            Jogador.jogador.TrocarEstado(comportamentos[comportamentoAtual].escolha);
 
             comportamentos[comportamentoAtual].ConfiguracoesEstado();
-            comportamentos[comportamentoAtual].Mover();
             comportamentos[comportamentoAtual].Atacar();
         }
     }
-    /*
-    IEnumerator TD()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        while (true)
+        if (collision.tag == "Player")
         {
-            int aux = Random.Range(0, comportamentos.Length);
-            print(aux);
-            if(comportamentoAtual != aux)
-            {
-                comportamentos[comportamentoAtual].AcabarEstado();
-                comportamentoAtual = aux;
-                Jogador.jogador.TrocarEstado(comportamentoAtual);
-
-                comportamentos[comportamentoAtual].ConfiguracoesEstado();
-                comportamentos[comportamentoAtual].Mover();
-                comportamentos[comportamentoAtual].Atacar();
-            }
-            
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
+            Jogador aux = collision.GetComponent<Jogador>();
+            aux.valores.DiminuirVida(1);
+            aux.TrocarEstado(comportamentos[comportamentoAtual].escolha);
+            comportamentos[comportamentoAtual].ResetPosition();
         }
-
     }
-    */
 }

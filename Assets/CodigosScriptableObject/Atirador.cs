@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Atirador", menuName = "Inimigo/Atirador", order = 2)]
+[CreateAssetMenu(fileName = "Atirador", menuName = "Inimigo/Atirador/Base", order = 1)]
 public class Atirador : Comportamento
 {
     Coroutine atacar;
@@ -18,7 +18,7 @@ public class Atirador : Comportamento
             atacar = _objeto.GetComponent<InimigoBase>().StartCoroutine(_Atacar());
     }
 
-    public IEnumerator _Atacar()
+    public virtual IEnumerator _Atacar()
     {
         while (true)
         {
@@ -33,16 +33,19 @@ public class Atirador : Comportamento
             aux.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             aux.GetComponent<Rigidbody2D>().velocity = aux.transform.right * 5f;
-            Destroy(aux.gameObject, 2f);
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         }
-        atacar = null;
     }
 
     public override void ConfiguracoesEstado()
     {
-        _objeto.transform.position = new Vector3(0, 0, 0);
+        ResetPosition();
         CriarColetavel();
+    }
+
+    public override void ResetPosition()
+    {
+        _objeto.transform.position = new Vector3(0, 0, 0);
     }
 
     public void Coletei()

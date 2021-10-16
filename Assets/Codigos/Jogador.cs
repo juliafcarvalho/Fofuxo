@@ -9,10 +9,12 @@ public class Jogador : MonoBehaviour
     public static Jogador jogador;
 
     public Rigidbody2D rb2D;
-    public int movimentacaoJogador = 0;
     public float movHorizontal, movVertical;
     public bool tocandoDireita, tocandoEsquerda, tocandoCima, tocandoBaixo;
 
+    public int velocidadeAtual = 15;
+
+    public comportamentoJogador atualJogador;
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -21,57 +23,53 @@ public class Jogador : MonoBehaviour
     }
     void Start()
     {
-        
+        //atualJogador = comportamentoJogador.MovBasica;
     }
 
 
     void Update()
     {
-        
+        movHorizontal = Input.GetAxisRaw("Horizontal");
+        movVertical = Input.GetAxisRaw("Vertical");
     }
-    public void TrocarEstado(int novoEstado)
+    public void TrocarEstado(comportamentoJogador novoEstado)
     {
-        movimentacaoJogador = novoEstado;
+        atualJogador = novoEstado;
         rb2D.velocity = Vector2.zero;
-        if (movimentacaoJogador == 4)
-        {
-            movimentacaoJogador = 0;
-        }
 
-        switch (movimentacaoJogador)
+        switch (atualJogador)
         {
-            case 0:
+            case comportamentoJogador.MovBasica:
                 //this.transform.position = new Vector3(0, 0, 0);
-                this.transform.position = new Vector3(0, -10.85f, 0);
+                this.rb2D.position = new Vector3(0, -10.85f, 0);
                 break;
-            case 1:
-                this.transform.position = new Vector3(0, -10.85f, 0);
+            case comportamentoJogador.MovBorda:
+                this.rb2D.position = new Vector3(0, -10.85f, 0);
                 break;
-            case 2:
-                this.transform.position = new Vector3(-10f, 0, 0);
+            case comportamentoJogador.MovVertical:
+                this.rb2D.position = new Vector3(-10f, 0, 0);
                 break;
-            case 3:
-                this.transform.position = new Vector3(0, -4.2f, 0);
+            case comportamentoJogador.MovHorizontal:
+                this.rb2D.position = new Vector3(0, -4.2f, 0);
                 break;
         }
     }
 
     private void FixedUpdate()
     {
-        movHorizontal = Input.GetAxisRaw("Horizontal");
-        movVertical = Input.GetAxisRaw("Vertical");
-        switch (movimentacaoJogador)
+        
+        switch (atualJogador)
         {
-            case 0:
+            case comportamentoJogador.MovBasica:
                 MovBasica();
                 break;
-            case 1:
+            case comportamentoJogador.MovBorda:
                 MovBorda();
                 break;
-            case 2:
+            case comportamentoJogador.MovVertical:
                 MovVertical();
                 break;
-            case 3:
+            case comportamentoJogador.MovHorizontal:
                 MovHorizontal();
                 break;
         }
@@ -79,32 +77,32 @@ public class Jogador : MonoBehaviour
     }
     public void MovVertical()
     {
-        rb2D.velocity = new Vector2(rb2D.velocity.x, movVertical * valores.velocidade);
+        rb2D.velocity = new Vector2(rb2D.velocity.x, movVertical * velocidadeAtual);
     }
     public void MovHorizontal()
     {
-        rb2D.velocity = new Vector2(movHorizontal * valores.velocidade, rb2D.velocity.y);
+        rb2D.velocity = new Vector2(movHorizontal * velocidadeAtual, rb2D.velocity.y);
     }
     public void MovBasica()
     {
         Vector2 normalizacao = new Vector2(movHorizontal, movVertical).normalized;
-        rb2D.velocity = normalizacao * valores.velocidade;
+        rb2D.velocity = normalizacao * velocidadeAtual;
     }
 
     public void MovBorda()
     {
-        if(movHorizontal != 0 && movVertical != 0)
+        if (movHorizontal != 0 && movVertical != 0)
         {
             movHorizontal = 0f;
         }
         if (tocandoBaixo)
         {
-            if(!tocandoEsquerda && !tocandoDireita)
+            if (!tocandoEsquerda && !tocandoDireita)
             {
                 movVertical = -1;
-            }    
+            }
         }
-        else if(tocandoEsquerda)
+        else if (tocandoEsquerda)
         {
             if (!tocandoCima)
             {
@@ -112,21 +110,21 @@ public class Jogador : MonoBehaviour
             }
         }
 
-        else if(tocandoDireita)
+        else if (tocandoDireita)
         {
-            if(!tocandoCima)
+            if (!tocandoCima)
             {
                 movHorizontal = 1;
             }
         }
 
-        else if(tocandoCima)
-        {            
+        else if (tocandoCima)
+        {
             movVertical = 1;
             //rb2D.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
         Vector2 aux = new Vector2(movHorizontal, movVertical);
-        rb2D.velocity = aux * valores.velocidade;
+        rb2D.velocity = aux * velocidadeAtual;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
