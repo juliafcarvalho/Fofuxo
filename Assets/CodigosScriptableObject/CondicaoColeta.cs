@@ -38,7 +38,7 @@ public class CondicaoColeta : CondicaoVitoria
         }
     }
 
-    public void CriarColetavel()
+    public virtual void CriarColetavel()
     {
         int aux = Random.Range(0, 4); //0 - tocandoEsquerda, 1 - tocandoDireita, 2 - tocandoCima e 3 - tocandoBaixo
         float pos;

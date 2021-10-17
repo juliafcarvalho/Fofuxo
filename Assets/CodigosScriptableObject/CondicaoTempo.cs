@@ -5,7 +5,7 @@ using UnityEngine;
 public class CondicaoTempo : CondicaoVitoria
 {
     private float tempo = 0;
-    [Range(5, 10)] public float tempoSeguir = 10;
+    [Range(5, 25)] public float tempoSeguir = 10;
     public override bool Atingiu()
     {
         tempo += Time.deltaTime;

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Atirador", menuName = "Inimigo/Atirador/Base", order = 1)]
 public class Atirador : Comportamento
 {
-    Coroutine atacar;
+    public Coroutine atacar;
     public GameObject projetil;    
     public float tempoAtirar = 1;
     public override void Atacar()

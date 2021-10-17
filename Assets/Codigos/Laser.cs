@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public float direcao = 5;
+    public Vector2 direcao;
     void Start()
     {
         StartCoroutine(MovLaser());
@@ -13,7 +13,7 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(0,direcao) * Time.deltaTime);
+        transform.Translate(direcao * Time.deltaTime);
     }
 
     IEnumerator MovLaser()
@@ -21,8 +21,22 @@ public class Laser : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(1.5f);
-            direcao *= -1;
+            if(direcao.x != 0)
+            {
+                direcao.x *= -1;
+            }
+
+            if (direcao.y != 0)
+            {
+                direcao.y *= -1;
+            }
+
         }
         
+    }
+
+    public void SeDestruir()
+    {
+        Destroy(this.gameObject);
     }
 }
