@@ -170,5 +170,12 @@ public class Jogador : MonoBehaviour
             valores.DiminuirVida(1);
             Destroy(collision.gameObject);
         }
+
+        if (collision.tag == "Inimigo")
+        {
+            valores.DiminuirVida(1);
+            TrocarEstado(atualJogador);
+        }
     }
+
 }

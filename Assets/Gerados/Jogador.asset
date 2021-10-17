@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ouvintes:
   - {fileID: 0}
-  vida: 3
-  vidaMaxima: 3
-  velocidade: 15
+  vida: 9
+  vidaMaxima: 10
+  velocidade: 5
   invencivel: 0

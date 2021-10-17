@@ -94,9 +94,6 @@ public class InimigoBase : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Jogador aux = collision.GetComponent<Jogador>();
-            aux.valores.DiminuirVida(1);
-            aux.TrocarEstado(comportamentos[comportamentoAtual]._comportamentoJogador);
             comportamentos[comportamentoAtual]._movimentacao.ResetPosition();
         }
     }
