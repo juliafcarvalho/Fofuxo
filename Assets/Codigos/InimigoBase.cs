@@ -49,6 +49,7 @@ public class InimigoBase : MonoBehaviour
                 etapasGanhas++;
                 if (etapasGanhas > etapasNecessarias)
                 {
+                    faseControle.ConcluiuFase(faseControle.faseAtual);
                     StartCoroutine(FimChefe());
                 }
                 else

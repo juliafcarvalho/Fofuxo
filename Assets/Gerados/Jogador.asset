@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2457b107752b7245aa4d8f926a93ac2, type: 3}
   m_Name: Jogador
   m_EditorClassIdentifier: 
-  ouvintes:
-  - {fileID: 0}
-  vida: 1
+  ouvintes: []
+  vida: 3
   vidaMaxima: 3
-  velocidade: 555
+  velocidade: 5
   invencivel: 0
-  sons:
-  - {fileID: 8300000, guid: bed4d450daa3d6e46ab2566002519cb8, type: 3}
+  fases: {fileID: 11400000, guid: 765d5bf86f635f148b4781c6fdba9e4e, type: 2}

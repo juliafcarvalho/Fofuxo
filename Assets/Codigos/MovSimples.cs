@@ -18,6 +18,8 @@ public class MovSimples : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         controleFases.jogador = this;
         CorFase();
+
+        this.transform.position = controleFases.ultimaPos;
     }
 
     public void CorFase()
@@ -56,7 +58,9 @@ public class MovSimples : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                carregamento.IrParaScene(int.Parse(collision.name));
+                controleFases.faseAtual = int.Parse(collision.name);
+                controleFases.ultimaPos = this.transform.position;
+                carregamento.IrParSceneNOME("Chefe 0" + collision.name);
             }
         }
     }

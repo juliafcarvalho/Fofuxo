@@ -12,6 +12,8 @@ public class ValoresJogador : ScriptableObject
     public float velocidade = 15f;
     public bool invencivel = false;
 
+    public FasesPassadas fases;
+
     private void Awake()
     {
         
@@ -28,6 +30,7 @@ public class ValoresJogador : ScriptableObject
             vida -= dano;
             if(vida <= 0)
             {
+                fases.Iniciar();
                 SceneManager.LoadScene("Derrota");
                 LimparOuvintes();
             }

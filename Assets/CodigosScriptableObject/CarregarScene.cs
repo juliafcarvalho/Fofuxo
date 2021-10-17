@@ -10,4 +10,9 @@ public class CarregarScene : ScriptableObject
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void IrParSceneNOME(string nome)
+    {
+        SceneManager.LoadScene(nome);
+    }
 }

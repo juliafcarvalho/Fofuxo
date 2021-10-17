@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faseLiberada: 00000000
   jogador: {fileID: 0}
-  ultimaPos: {x: 0, y: 0}
+  ultimaPos: {x: -6.2, y: -0.2}
