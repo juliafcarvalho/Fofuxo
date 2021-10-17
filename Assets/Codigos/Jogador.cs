@@ -15,9 +15,12 @@ public class Jogador : MonoBehaviour
     public int velocidadeAtual = 15;
 
     public comportamentoJogador atualJogador;
+    AudioSource audioSource;
+
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         jogador = this;
         valores.LimparOuvintes();
     }
@@ -167,13 +170,13 @@ public class Jogador : MonoBehaviour
     {
         if(collision.tag == "Dano")
         {
-            valores.DiminuirVida(1);
+            valores.DiminuirVida(1, audioSource);
             Destroy(collision.gameObject);
         }
 
         if (collision.tag == "Inimigo")
         {
-            valores.DiminuirVida(1);
+            valores.DiminuirVida(1, audioSource);
             TrocarEstado(atualJogador);
         }
     }

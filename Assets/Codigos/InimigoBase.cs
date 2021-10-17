@@ -16,8 +16,11 @@ public class InimigoBase : MonoBehaviour
     bool emJogo = true;
 
     GlitchEffect glitch;
+    public AudioClip[] sons;
+    AudioSource audioSource;
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         glitch = GameObject.Find("Main Camera").GetComponent<GlitchEffect>();
 
         for (int i = 0; i < comportamentos.Length; i++)
@@ -40,6 +43,7 @@ public class InimigoBase : MonoBehaviour
             comportamentos[comportamentoAtual]._movimentacao.Mover();
             if (comportamentos[comportamentoAtual]._condicaoVitoria.Atingiu())
             {
+                audioSource.PlayOneShot(sons[0]);
                 etapasGanhas++;
                 if (etapasGanhas > etapasNecessarias)
                 {
