@@ -1168,8 +1168,12 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   movHorizontal: 0
   movVertical: 0
-  controleFases: {fileID: 0}
-  portais: []
+  controleFases: {fileID: 11400000, guid: 765d5bf86f635f148b4781c6fdba9e4e, type: 2}
+  portais:
+  - {fileID: 1816384006}
+  - {fileID: 518335842}
+  - {fileID: 142296483}
+  - {fileID: 1992523550}
 --- !u!212 &1036491651
 SpriteRenderer:
   m_ObjectHideFlags: 0
