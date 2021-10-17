@@ -10,11 +10,30 @@ public class MovSimples : MonoBehaviour
 
     public Rigidbody2D rb2D;
     public float movHorizontal, movVertical;
+
+    public FasesPassadas controleFases;
+    public SpriteRenderer[] portais;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        controleFases.jogador = this;
+        CorFase();
     }
 
+    public void CorFase()
+    {
+        for (int i = 0; i < controleFases.faseLiberada.Length; i++)
+        {
+            if (!controleFases.faseLiberada[i])
+            {
+                portais[i].color = Color.white;
+            }
+            else
+            {
+                portais[i].color = Color.black;
+            }
+        }
+    }
 
     void Update()
     {
@@ -45,7 +64,7 @@ public class MovSimples : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.name == "Caminho")
-        {
+        {            
             this.transform.position = ultimaPos;
             estouNoCaminho = false;
         }

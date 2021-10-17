@@ -18,6 +18,8 @@ public class InimigoBase : MonoBehaviour
     GlitchEffect glitch;
     public AudioClip[] sons;
     AudioSource audioSource;
+
+    public FasesPassadas faseControle;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();

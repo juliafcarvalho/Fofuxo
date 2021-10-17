@@ -134,6 +134,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   sons:
   - {fileID: 8300000, guid: 2e22ed844f9532e49b4935a8f88357ac, type: 3}
+  faseControle: {fileID: 11400000, guid: 765d5bf86f635f148b4781c6fdba9e4e, type: 2}
 --- !u!82 &8078532459295401988
 AudioSource:
   m_ObjectHideFlags: 0
