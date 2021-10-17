@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 117926133}
   - component: {fileID: 117926132}
   m_Layer: 0
-  m_Name: Idle_snake_0
+  m_Name: Idle_Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 117926131}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9aff21151d25cfa4f8562a53291dc3d4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 76393df34f821e14ead5b3a75cfd617f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -3384578052818813724, guid: 62908f282905f7f468830e0b38bcfa83, type: 3}
+  m_Sprite: {fileID: 3306856194637869466, guid: 83115e2b22628a343af0d851c1e26ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

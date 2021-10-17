@@ -8,36 +8,25 @@ public class MovSimples : MonoBehaviour
     public Vector2 ultimaPos;
     public CarregarScene carregamento;
 
+    public Rigidbody2D rb2D;
+    public float movHorizontal, movVertical;
     void Start()
     {
-        
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            ultimaPos = this.transform.position;
-            transform.Translate(0, 0.2f, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ultimaPos = this.transform.position;
-            transform.Translate(0, -0.2f, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ultimaPos = this.transform.position;
-            transform.Translate(-0.2f, 0, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ultimaPos = this.transform.position;
-            transform.Translate(0.2f, 0, 0);
-        }
+        ultimaPos = this.transform.position;
+        movHorizontal = Input.GetAxisRaw("Horizontal");
+        movVertical = Input.GetAxisRaw("Vertical");
     }
-
+    private void FixedUpdate()
+    {
+        Vector2 normalizacao = new Vector2(movHorizontal, movVertical).normalized;
+        rb2D.velocity = normalizacao * 10;
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.name == "Caminho")

@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Chefe 02.unity
     guid: 97930875c277e1d47b61c70969d6a73f
   - enabled: 1
+    path: Assets/Scenes/Chefe 03.unity
+    guid: 5f331cc5ff1155141a54ddea8ce2d57f
+  - enabled: 1
+    path: Assets/Scenes/Chefe 04.unity
+    guid: c36bf68a6ba252346b38f1ea0331413d
+  - enabled: 1
     path: Assets/Scenes/Derrota.unity
     guid: fb84784bd2f8b9041a8f3fd5c3962e9d
   m_configObjects: {}
