@@ -12,7 +12,7 @@ public class InimigoBase : MonoBehaviour
 
     public int etapasGanhas = 0;
     public int etapasNecessarias = 3;
-
+    public Animator anim;
     private void Awake()
     {
         feedback.enabled = false;
@@ -53,12 +53,14 @@ public class InimigoBase : MonoBehaviour
     {
         Time.timeScale = 0;
         feedback.enabled = true;
+        anim.SetBool("attack", true);
         feedback.text = "REVIRAVOLTA?";
         yield return new WaitForSecondsRealtime(1f);
         TrocarDesafio();
         feedback.text = "Veremos...";
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
+        anim.SetBool("attack", false);
         feedback.enabled = false;
     }
 

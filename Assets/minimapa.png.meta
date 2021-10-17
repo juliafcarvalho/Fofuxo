@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: a1171be46d6df6146a2f3e8255a30e56
+guid: 252378be1ec078a47a246d26f5d07675
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6608374653699327084
-    second: Attack_Kid_0
-  - first:
-      213: -2455485138632347211
-    second: Attack_Kid_1
-  - first:
-      213: -6930629518402895826
-    second: Attack_Kid_2
-  - first:
-      213: -5228857708944305351
-    second: Attack_Kid_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,12 +41,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,91 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Attack_Kid_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6481702cb9a5bb50800000000000000
-      internalID: 6608374653699327084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_Kid_1
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b17190b64d5cedd0800000000000000
-      internalID: -2455485138632347211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_Kid_2
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2042cd4c2571df90800000000000000
-      internalID: -6930629518402895826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_Kid_3
-      rect:
-        serializedVersion: 2
-        x: 852
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 933df4d0e9d5f67b0800000000000000
-      internalID: -5228857708944305351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

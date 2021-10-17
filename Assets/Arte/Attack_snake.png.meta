@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 83115e2b22628a343af0d851c1e26ec6
+guid: abbe409ad84ba3146b2c618c5084025c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3306856194637869466
-    second: Attack_Old_0
+      213: -3918081194523422152
+    second: Attack_snake_0
   - first:
-      213: 3506704921174191314
-    second: Attack_Old_1
+      213: 7916774962158631612
+    second: Attack_snake_1
   - first:
-      213: 718370077509214553
-    second: Attack_Old_2
+      213: 5630512343211470776
+    second: Attack_snake_2
   - first:
-      213: -2969120086600882391
-    second: Attack_Old_3
-  - first:
-      213: -8454857905096312090
-    second: Attack_Old_4
-  - first:
-      213: -1231046519066072704
-    second: Attack_Old_5
+      213: 1533277693066123915
+    second: Attack_snake_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_Old_0
+      name: Attack_snake_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91b0b4403054ed20800000000000000
-      internalID: 3306856194637869466
+      spriteID: 8321b4799ed20a9c0800000000000000
+      internalID: -3918081194523422152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_1
+      name: Attack_snake_1
       rect:
         serializedVersion: 2
         x: 284
@@ -156,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dca3b6eb815aa030800000000000000
-      internalID: 3506704921174191314
+      spriteID: cbafb2a12e80edd60800000000000000
+      internalID: 7916774962158631612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_2
+      name: Attack_snake_2
       rect:
         serializedVersion: 2
         x: 568
@@ -177,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951e43787c928f900800000000000000
-      internalID: 718370077509214553
+      spriteID: 8bf6298f429932e40800000000000000
+      internalID: 5630512343211470776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_3
+      name: Attack_snake_3
       rect:
         serializedVersion: 2
         x: 852
@@ -198,50 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9276da623019bc6d0800000000000000
-      internalID: -2969120086600882391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_Old_4
-      rect:
-        serializedVersion: 2
-        x: 1136
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6eab454f78f4aaa80800000000000000
-      internalID: -8454857905096312090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_Old_5
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 0
-        width: 284
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 089e51996b17aeee0800000000000000
-      internalID: -1231046519066072704
+      spriteID: b8a9c3d20fb474510800000000000000
+      internalID: 1533277693066123915
       vertices: []
       indices: 
       edges: []

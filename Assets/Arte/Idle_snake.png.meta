@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 83115e2b22628a343af0d851c1e26ec6
+guid: 62908f282905f7f468830e0b38bcfa83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3306856194637869466
-    second: Attack_Old_0
+      213: -3384578052818813724
+    second: Idle_snake_0
   - first:
-      213: 3506704921174191314
-    second: Attack_Old_1
+      213: 6858685410664816970
+    second: Idle_snake_1
   - first:
-      213: 718370077509214553
-    second: Attack_Old_2
+      213: 5770909183460115224
+    second: Idle_snake_2
   - first:
-      213: -2969120086600882391
-    second: Attack_Old_3
+      213: -2876304402367473246
+    second: Idle_snake_3
   - first:
-      213: -8454857905096312090
-    second: Attack_Old_4
+      213: 6356216663663930093
+    second: Idle_snake_4
   - first:
-      213: -1231046519066072704
-    second: Attack_Old_5
+      213: 2187180905916645861
+    second: Idle_snake_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_Old_0
+      name: Idle_snake_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91b0b4403054ed20800000000000000
-      internalID: 3306856194637869466
+      spriteID: 4ecb62771309701d0800000000000000
+      internalID: -3384578052818813724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_1
+      name: Idle_snake_1
       rect:
         serializedVersion: 2
         x: 284
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dca3b6eb815aa030800000000000000
-      internalID: 3506704921174191314
+      spriteID: a41a4d8ca02fe2f50800000000000000
+      internalID: 6858685410664816970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_2
+      name: Idle_snake_2
       rect:
         serializedVersion: 2
         x: 568
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951e43787c928f900800000000000000
-      internalID: 718370077509214553
+      spriteID: 8130e27a353661050800000000000000
+      internalID: 5770909183460115224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_3
+      name: Idle_snake_3
       rect:
         serializedVersion: 2
         x: 852
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9276da623019bc6d0800000000000000
-      internalID: -2969120086600882391
+      spriteID: 2a99ef6a2605518d0800000000000000
+      internalID: -2876304402367473246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_4
+      name: Idle_snake_4
       rect:
         serializedVersion: 2
         x: 1136
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eab454f78f4aaa80800000000000000
-      internalID: -8454857905096312090
+      spriteID: dea6b110161d53850800000000000000
+      internalID: 6356216663663930093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Old_5
+      name: Idle_snake_5
       rect:
         serializedVersion: 2
         x: 1420
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 089e51996b17aeee0800000000000000
-      internalID: -1231046519066072704
+      spriteID: 5e1cdac127d6a5e10800000000000000
+      internalID: 2187180905916645861
       vertices: []
       indices: 
       edges: []
