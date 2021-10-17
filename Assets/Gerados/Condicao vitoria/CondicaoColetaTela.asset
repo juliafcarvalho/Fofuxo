@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7603e8edb7f784f9e36155b29a2ebf, type: 3}
   m_Name: CondicaoColetaTela
   m_EditorClassIdentifier: 
-  coletavel: {fileID: 0}
+  coletavel: {fileID: 138856289641009367, guid: c40bcc3cdf00d4648a82a6243ac7fd77, type: 3}
   coletasNecessarias: 3
