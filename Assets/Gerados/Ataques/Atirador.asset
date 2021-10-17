@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Atirador
   m_EditorClassIdentifier: 
   _objeto: {fileID: 0}
-  escolha: 1
+  _comportamentoJogador: 0
+  _movimentacao: {fileID: 11400000, guid: 26f4f541d2c6be74b9673a88ae62c3c5, type: 2}
   _condicaoVitoria: {fileID: 11400000, guid: ac8ea2cf4f3353141913a1de3aac5215, type: 2}
   projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
   tempoAtirar: 1
