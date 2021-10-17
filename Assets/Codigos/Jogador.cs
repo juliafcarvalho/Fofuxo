@@ -15,14 +15,20 @@ public class Jogador : MonoBehaviour
     public int velocidadeAtual = 15;
 
     public comportamentoJogador atualJogador;
-    AudioSource audioSource;
+    [HideInInspector] public AudioSource audioSource;
 
+    public AudioClip[] sons;
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         jogador = this;
         valores.LimparOuvintes();
+    }
+
+    public void tocarSom(int qual)
+    {
+        audioSource.PlayOneShot(sons[qual]);
     }
     void Start()
     {
@@ -170,13 +176,15 @@ public class Jogador : MonoBehaviour
     {
         if(collision.tag == "Dano")
         {
-            valores.DiminuirVida(1, audioSource);
+            tocarSom(0);
+            valores.DiminuirVida(1);
             Destroy(collision.gameObject);
         }
 
         if (collision.tag == "Inimigo")
         {
-            valores.DiminuirVida(1, audioSource);
+            tocarSom(0);
+            valores.DiminuirVida(1);
             TrocarEstado(atualJogador);
         }
     }

@@ -134,9 +134,10 @@ MonoBehaviour:
   tocandoBaixo: 0
   velocidadeAtual: 15
   atualJogador: 0
+  audioSource: {fileID: 0}
   sons:
-  - {fileID: 8300000, guid: 2e22ed844f9532e49b4935a8f88357ac, type: 3}
   - {fileID: 8300000, guid: bed4d450daa3d6e46ab2566002519cb8, type: 3}
+  - {fileID: 8300000, guid: 6f4f5cec06497ca47bab31f7143873b0, type: 3}
 --- !u!50 &4469287555450683594
 Rigidbody2D:
   serializedVersion: 4

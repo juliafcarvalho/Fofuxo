@@ -80,15 +80,20 @@ public class InimigoBase : MonoBehaviour
 
     IEnumerator FimChefe()
     {
+        anim.SetTrigger("morte");
+
         glitch.intensity = 1;
         glitch.flipIntensity = 1;
         glitch.colorIntensity = 1;
 
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(1f);
+
         Jogador.jogador.valores.velocidade += 5;
         comportamentos[comportamentoAtual].Limpar();
+
         yield return new WaitForSecondsRealtime(1f);
+
         Time.timeScale = 1;
         SceneManager.LoadScene("Mapa");
     }

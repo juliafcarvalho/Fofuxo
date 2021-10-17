@@ -21,6 +21,7 @@ public class Coletavel : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            collision.GetComponent<Jogador>().tocarSom(1);
             condicaoVitoria.Acao();
             Destroy(this.gameObject);
         }

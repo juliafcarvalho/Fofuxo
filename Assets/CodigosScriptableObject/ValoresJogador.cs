@@ -12,7 +12,6 @@ public class ValoresJogador : ScriptableObject
     public float velocidade = 15f;
     public bool invencivel = false;
 
-    public AudioClip[] sons;
     private void Awake()
     {
         
@@ -22,7 +21,7 @@ public class ValoresJogador : ScriptableObject
         ouvintes.Add(listener); 
     }
 
-    public void DiminuirVida(int dano, AudioSource quemEmite)
+    public void DiminuirVida(int dano)
     {
         if(!invencivel)
         {
@@ -33,8 +32,6 @@ public class ValoresJogador : ScriptableObject
                 LimparOuvintes();
             }
         }
-        quemEmite.PlayOneShot(sons[0]);
-
         for (int i = ouvintes.Count - 1; i >= 0; i--)
             ouvintes[i].JogadorLevouDano();
     }
