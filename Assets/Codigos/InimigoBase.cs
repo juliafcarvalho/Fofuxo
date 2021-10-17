@@ -8,14 +8,18 @@ public class InimigoBase : MonoBehaviour
 {
     public int comportamentoAtual = 0;
     public Comportamento[] comportamentos;
-    public Text feedback;
 
     public int etapasGanhas = 0;
     public int etapasNecessarias = 3;
     public Animator anim;
+
+    bool emJogo = true;
+
+    GlitchEffect glitch;
     private void Awake()
     {
-        feedback.enabled = false;
+        glitch = GameObject.Find("Main Camera").GetComponent<GlitchEffect>();
+
         for (int i = 0; i < comportamentos.Length; i++)
         {
             comportamentos[i]._objeto = this.gameObject.GetComponent<InimigoBase>();
@@ -31,7 +35,7 @@ public class InimigoBase : MonoBehaviour
     public void Update()
     {
         
-        if(!feedback.isActiveAndEnabled)
+        if(emJogo)
         {
             comportamentos[comportamentoAtual]._movimentacao.Mover();
             if (comportamentos[comportamentoAtual]._condicaoVitoria.Atingiu())
@@ -52,26 +56,33 @@ public class InimigoBase : MonoBehaviour
     IEnumerator Trocar()
     {
         Time.timeScale = 0;
-        feedback.enabled = true;
+        glitch.intensity = 1;
+        glitch.flipIntensity = 1;
+        glitch.colorIntensity = 1;
+
+        emJogo = false;
         anim.SetBool("attack", true);
-        feedback.text = "REVIRAVOLTA?";
         yield return new WaitForSecondsRealtime(1f);
         TrocarDesafio();
-        feedback.text = "Veremos...";
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
         anim.SetBool("attack", false);
-        feedback.enabled = false;
+        emJogo = true;
+
+        glitch.intensity = 0;
+        glitch.flipIntensity = 0;
+        glitch.colorIntensity = 0;
     }
 
     IEnumerator FimChefe()
     {
+        glitch.intensity = 1;
+        glitch.flipIntensity = 1;
+        glitch.colorIntensity = 1;
+
         Time.timeScale = 0;
-        feedback.enabled = true;
-        feedback.text = "Vitoria";
         yield return new WaitForSecondsRealtime(1f);
         Jogador.jogador.valores.velocidade += 5;
-        feedback.text = "...um presente...";
         comportamentos[comportamentoAtual].Limpar();
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
