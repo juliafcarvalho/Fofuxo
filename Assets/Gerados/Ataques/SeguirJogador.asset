@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e173dc4e8bfbff49841f29f7cd6735f, type: 3}
+  m_Name: SeguirJogador
+  m_EditorClassIdentifier: 
+  _objeto: {fileID: 0}
+  _comportamentoJogador: 0
+  _movimentacao: {fileID: 11400000, guid: e88f894124b8edb468bf9f67718067fb, type: 2}
+  _condicaoVitoria: {fileID: 11400000, guid: 7d029298c8e750645979cead67397f7b, type: 2}

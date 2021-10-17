@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coletavel : MonoBehaviour
 {
-    public Atirador inimigo;
+    public CondicaoColeta condicaoVitoria;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class Coletavel : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            inimigo.Coletei();
+            condicaoVitoria.Acao();
             Destroy(this.gameObject);
         }
     }

@@ -57,7 +57,7 @@ public class MovSimples : MonoBehaviour
     {
         if (collision.name == "Caminho")
         {
-            this.transform.position = ultimaPos;
+            //this.transform.position = ultimaPos;
             estouNoCaminho = false;
         }
     }

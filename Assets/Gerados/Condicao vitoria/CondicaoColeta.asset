@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c41740364711d248a59e37cfda83ea8, type: 3}
-  m_Name: Atirador2D
+  m_Script: {fileID: 11500000, guid: 1696718d317adcb4295acdbdced528ec, type: 3}
+  m_Name: CondicaoColeta
   m_EditorClassIdentifier: 
-  _objeto: {fileID: 0}
-  escolha: 1
-  projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
   coletavel: {fileID: 138856289641009367, guid: c40bcc3cdf00d4648a82a6243ac7fd77, type: 3}
-  tempoAtirar: 1
   coletasNecessarias: 3

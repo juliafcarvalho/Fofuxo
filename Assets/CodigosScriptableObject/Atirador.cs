@@ -6,12 +6,8 @@ using UnityEngine;
 public class Atirador : Comportamento
 {
     Coroutine atacar;
-    public GameObject projetil;
-    public GameObject coletavel;
+    public GameObject projetil;    
     public float tempoAtirar = 1;
-    public int coletasNecessarias = 3;
-    int coletados = 0;
-     
     public override void Atacar()
 {
         if (atacar == null)
@@ -36,54 +32,7 @@ public class Atirador : Comportamento
             yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         }
     }
-
-    public override void ConfiguracoesEstado()
-    {
-        ResetPosition();
-        CriarColetavel();
-    }
-
-    public override void ResetPosition()
-    {
-        _objeto.transform.position = new Vector3(0, 0, 0);
-    }
-
-    public void Coletei()
-    {
-        coletados++;
-        if(coletados < coletasNecessarias)
-        {
-            CriarColetavel();
-        }        
-    }
-    public void CriarColetavel()
-    {
-        int aux = Random.Range(0, 4); //0 - tocandoEsquerda, 1 - tocandoDireita, 2 - tocandoCima e 3 - tocandoBaixo
-        float pos;
-        GameObject criacao = new GameObject();
-
-        switch (aux)
-        {
-            case 0:
-                pos = Random.Range(10f, -10f);
-                criacao = Instantiate(coletavel, new Vector2(-13, pos), Quaternion.identity);
-                break;
-            case 1:
-                pos = Random.Range(10f, -10f);
-                criacao = Instantiate(coletavel, new Vector2(12, pos), Quaternion.identity);
-                break;
-            case 2:
-                pos = Random.Range(-12.5f, -12.5f);
-                criacao = Instantiate(coletavel, new Vector2(pos, 10.5f), Quaternion.identity);
-                break;
-            case 3:
-                pos = Random.Range(-12.5f, -12.5f);
-                criacao = Instantiate(coletavel, new Vector2(pos, -10.8f), Quaternion.identity);
-                break;
-        }
-
-        criacao.GetComponent<Coletavel>().inimigo = this;
-    }
+        
     public override void AcabarEstado()
     {
         if(atacar != null)
@@ -95,19 +44,9 @@ public class Atirador : Comportamento
 
     public override void Limpar()
     {
-        atacar = null;
-        coletados = 0;
+        base.Limpar();
+        atacar = null;        
     }
 
-    public override bool Atingiu()
-    {
-        if (coletados >= coletasNecessarias)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    
 }

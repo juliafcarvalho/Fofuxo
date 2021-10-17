@@ -519,11 +519,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comportamentoAtual: 2
   comportamentos:
-  - {fileID: 11400000, guid: 89346a6f2dbe84d46a20ba2c95bcf05f, type: 2}
+  - {fileID: 11400000, guid: fe007ae2d798e5a4fa75d41c92a8ae5e, type: 2}
   - {fileID: 11400000, guid: 835353122ad7f6c4ba1d53b6761aee47, type: 2}
   - {fileID: 11400000, guid: e10282771d697644790913790b19d6f0, type: 2}
   - {fileID: 11400000, guid: ae61ec6c9ca76004ebdae7123ce61dac, type: 2}
   feedback: {fileID: 671031033}
+  etapasGanhas: 0
+  etapasNecessarias: 3
 --- !u!1 &498668458
 GameObject:
   m_ObjectHideFlags: 0

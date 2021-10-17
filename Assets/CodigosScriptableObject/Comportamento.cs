@@ -4,23 +4,28 @@ using UnityEngine;
 
 public enum comportamentoJogador { MovBasica, MovBorda, MovVertical, MovHorizontal };
 
-public abstract class Comportamento : ScriptableObject
+[CreateAssetMenu(fileName = "SeguirJogador", menuName = "Inimigo/Configuracao basica", order = 1)]
+public class Comportamento : ScriptableObject
 {
 	
 	public InimigoBase _objeto;
-	public comportamentoJogador escolha;
-	//public virtual void Mover(GameObject _object)
-	public virtual void Mover() 
-	{
-		
-	}
+	public comportamentoJogador _comportamentoJogador;
+	public Movimentacao _movimentacao;
+	public CondicaoVitoria _condicaoVitoria;
+	
 	public virtual void Atacar() { }
-	public virtual void ConfiguracoesEstado() { }
+	public virtual void ConfiguracoesEstado() 
+	{
+		_condicaoVitoria.Configurar();
+		_movimentacao.ResetPosition();
+		_condicaoVitoria.Zerar();
+	}
 	public virtual void AcabarEstado() { }
-	public virtual void Limpar() { }
-	public virtual bool Atingiu()
-    {
-		return false;
-    }
-	public virtual void ResetPosition() { }
+	public virtual void Limpar() 
+	{
+		_condicaoVitoria.Zerar();
+		_movimentacao.Zerar();
+	}
+	
+	
 }

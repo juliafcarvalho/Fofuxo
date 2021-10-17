@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe400fd739585e4f8e73cf377882d59, type: 3}
-  m_Name: Seguidor
+  m_Script: {fileID: 11500000, guid: be6a5e1be50353c419133ecc716b3c9e, type: 3}
+  m_Name: MovimentacaoSeguir
   m_EditorClassIdentifier: 
   _objeto: {fileID: 0}
-  escolha: 0
-  tempoInteligente: 0.891
-  tempoSeguir: 10
+  velocidade: 5
+  tempoInteligente: 0.6
