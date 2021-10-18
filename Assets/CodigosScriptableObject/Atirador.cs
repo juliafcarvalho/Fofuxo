@@ -29,7 +29,7 @@ public class Atirador : Comportamento
             aux.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             aux.GetComponent<Rigidbody2D>().velocity = aux.transform.right * 5f;
-            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
+            yield return new WaitForSeconds(tempoAtirar);
         }
     }
         

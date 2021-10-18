@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4271be976b487146b143a791b4dcf5f, type: 3}
-  m_Name: MovimentacaoGirar2
+  m_Script: {fileID: 11500000, guid: be6a5e1be50353c419133ecc716b3c9e, type: 3}
+  m_Name: MovimentacaoSeguirRapido
   m_EditorClassIdentifier: 
   _objeto: {fileID: 0}
-  velocidade: 40
+  velocidade: 6
+  tempoInteligente: 0.2

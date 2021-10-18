@@ -15,6 +15,6 @@ MonoBehaviour:
   _objeto: {fileID: 0}
   _comportamentoJogador: 0
   _movimentacao: {fileID: 11400000, guid: 26f4f541d2c6be74b9673a88ae62c3c5, type: 2}
-  _condicaoVitoria: {fileID: 11400000, guid: 7d029298c8e750645979cead67397f7b, type: 2}
+  _condicaoVitoria: {fileID: 11400000, guid: fafbdb4b367c647498b32ded75ae75a4, type: 2}
   projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
-  tempoAtirar: 1
+  tempoAtirar: 2

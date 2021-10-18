@@ -9,7 +9,7 @@ public class CondicaoColetaTelaToda : CondicaoColeta
         GameObject criacao;
 
         float auxX = Random.Range(-10, 10);
-        float auxY = Random.Range(-12.5f, 12f);
+        float auxY = Random.Range(-10f, 10f);
 
         criacao = Instantiate(coletavel, new Vector2(auxX, auxY), Quaternion.identity);
         criacao.GetComponent<Coletavel>().condicaoVitoria = this;

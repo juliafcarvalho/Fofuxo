@@ -21,7 +21,7 @@ public class Atirar4Direcoes : Atirador
             GameObject projetil4 = Instantiate(projetil, _objeto.transform.position, Quaternion.identity);
             projetil4.GetComponent<Rigidbody2D>().velocity = -_objeto.transform.right * 5f;
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(tempoAtirar);
         }
     }
 }
