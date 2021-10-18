@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class MovSimples : MonoBehaviour
 {
-    public bool estouNoCaminho;
-    public Vector2 ultimaPos;
     public CarregarScene carregamento;
 
     public Rigidbody2D rb2D;
-    public float movHorizontal, movVertical;
+    public float movHorizontal;
 
     public FasesPassadas controleFases;
     public SpriteRenderer[] portais;
+
+    bool colidindo;
+    int numero;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         controleFases.jogador = this;
         CorFase();
-
         this.transform.position = controleFases.ultimaPos;
     }
 
@@ -39,38 +39,33 @@ public class MovSimples : MonoBehaviour
 
     void Update()
     {
-        ultimaPos = this.transform.position;
         movHorizontal = Input.GetAxisRaw("Horizontal");
-        movVertical = Input.GetAxisRaw("Vertical");
+
+        if(colidindo && Input.GetKeyDown(KeyCode.Space))
+        {
+            controleFases.faseAtual = numero;
+            controleFases.ultimaPos = this.transform.position;
+            carregamento.IrParSceneNOME("Chefe 0" + numero);
+        }
     }
     private void FixedUpdate()
     {
-        Vector2 normalizacao = new Vector2(movHorizontal, movVertical).normalized;
-        rb2D.velocity = normalizacao * 10;
+        rb2D.velocity = new Vector2(movHorizontal * 10, 0);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.name == "Caminho")
-        {
-            estouNoCaminho = true;
-        }
         if(collision.tag == "Int")
         {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                controleFases.faseAtual = int.Parse(collision.name);
-                controleFases.ultimaPos = this.transform.position;
-                carregamento.IrParSceneNOME("Chefe 0" + collision.name);
-            }
+            colidindo = true;
+            numero = int.Parse(collision.name);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name == "Caminho")
-        {            
-            this.transform.position = ultimaPos;
-            estouNoCaminho = false;
+        if (collision.tag == "Int")
+        {
+            colidindo = false;
         }
     }
 }
