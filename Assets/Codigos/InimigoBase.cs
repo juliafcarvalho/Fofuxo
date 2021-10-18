@@ -98,7 +98,14 @@ public class InimigoBase : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1;
-        SceneManager.LoadScene("Mapa");
+        if(faseControle.faseAtual == 4)
+        {
+            SceneManager.LoadScene("Vitoria");
+        }
+        else
+        {
+            SceneManager.LoadScene("Mapa");
+        }        
     }
     public void TrocarDesafio()
     {

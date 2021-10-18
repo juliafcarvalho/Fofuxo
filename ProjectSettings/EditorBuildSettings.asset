@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chefe 04.unity
     guid: c36bf68a6ba252346b38f1ea0331413d
   - enabled: 1
+    path: Assets/Scenes/Vitoria.unity
+    guid: 9d970ae0ddb992c42a684989535e9c55
+  - enabled: 1
     path: Assets/Scenes/Derrota.unity
     guid: fb84784bd2f8b9041a8f3fd5c3962e9d
   m_configObjects: {}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627b73ac55ee60b4987d6f8db70fc8f9, type: 3}
+  m_Name: Atirador1TiroSimples
+  m_EditorClassIdentifier: 
+  _objeto: {fileID: 0}
+  _comportamentoJogador: 0
+  _movimentacao: {fileID: 11400000, guid: e88f894124b8edb468bf9f67718067fb, type: 2}
+  _condicaoVitoria: {fileID: 11400000, guid: 1e68e82a57580b049bbf9c0eecbd2564, type: 2}
+  projetil: {fileID: 9136101884708295279, guid: 31e2c5b6fa84e8348a9923166b0771e1, type: 3}
+  tempoAtirar: 1
